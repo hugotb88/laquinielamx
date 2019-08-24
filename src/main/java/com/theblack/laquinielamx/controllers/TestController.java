@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Victor Hugo Olvera Cruz
- * @subject Test Controller
+ * Test Controller
  */
 @RestController
 public class TestController {
