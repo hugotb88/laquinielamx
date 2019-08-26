@@ -1,0 +1,24 @@
+INSERT INTO `quinielamx`.`stadium`
+(`id`,
+`name`)
+VALUES
+(1 ,"Estadio Azteca"),
+(2 ,"Estadio Jalisco"),
+(3 ,"Estadio Alfonso Lastras"),
+(4 ,"Estadio Azteca"),
+(5 ,"Estadio Benito Juárez"),
+(6 ,"Estadio Akron"),
+(7 ,"Estadio Nou Camp"),
+(8 ,"Estadio BBVA"),
+(9 ,"Estadio José Maria Morelos y Pavón"),
+(10,"Estadio Victoria"),
+(11,"Estadio Hidalgo"),
+(12,"Estadio Cuauhtémoc"),
+(13,"Estadio Olímpico Universitario"),
+(14,"Estadio La Corregidora"),
+(15,"Estadio TSM Corona"),
+(16,"Estadio Caliente"),
+(17,"Estadio Nemesio Diez"),
+(18,"Estadio Universitario"),
+(19,"Estadio Luis Pirata Fuente")
+;

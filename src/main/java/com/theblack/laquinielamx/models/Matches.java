@@ -2,9 +2,7 @@ package com.theblack.laquinielamx.models;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
@@ -19,19 +17,13 @@ public class Matches {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    //TODO: Relation many Matches to one ID ???
-    @Column(name = "id_local_team", nullable = false)
-    private Long idLocalTeamName;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "local_team_id", referencedColumnName = "id")
+    private Team localTeam;
 
-    //TODO: Relation many Matches to one ID  ???
-    @Column(name = "id_away_team", nullable = false)
-    private Long idAwayTeamName;
-
-    @Column(name = "name_local_team", nullable = false)
-    private String localTeamName;
-
-    @Column(name = "name_away_team", nullable = false)
-    private String awayTeamName;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "away_team_id", referencedColumnName = "id")
+    private Team awayTeam;
 
     @Column(name = "local_team_score",nullable = false)
     private Integer localTeamScore;
@@ -42,8 +34,9 @@ public class Matches {
     @Column(name = "round", nullable = false)
     private Integer round;
 
-    @Column(name = "stadium", nullable = false)
-    private String stadium;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "stadium_id", referencedColumnName = "id")
+    private Stadium stadium;
 
     @Column(name = "match_day", nullable = false)
     private LocalDateTime matchDay;

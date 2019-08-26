@@ -23,8 +23,9 @@ public class Team {
     @Column(name = "team_name", nullable = false)
     private String teamName;
 
-    @Column(name = "stadium_name", nullable = false)
-    private String stadiumName;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "stadium_id", referencedColumnName = "id")
+    private Stadium stadium;
 
     @Column(name = "matches_played")
     private Integer matchesPlayed;
