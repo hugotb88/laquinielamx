@@ -1,4 +1,4 @@
-INSERT INTO `quinielamx`.`stadium`
+INSERT INTO `quinielamx`.`stadiums`
 (`id`,
 `name`)
 VALUES

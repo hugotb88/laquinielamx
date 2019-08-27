@@ -1,10 +1,12 @@
 package com.theblack.laquinielamx.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Victor Hugo Olvera Cruz
@@ -12,8 +14,10 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "teams")
-public class Team {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //To avoid Exception by Serialization
+@Entity
+@Table(name = "teams")
+public class Team implements Serializable {
 
     //Attributes
     @Id
@@ -23,8 +27,8 @@ public class Team {
     @Column(name = "team_name", nullable = false)
     private String teamName;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "stadium_id", referencedColumnName = "id")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = " stadium_id")
     private Stadium stadium;
 
     @Column(name = "matches_played")
@@ -47,5 +51,6 @@ public class Team {
 
     @Column(name = "points")
     private Integer points;
+
 
 }

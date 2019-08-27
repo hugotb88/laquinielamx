@@ -2,17 +2,21 @@ package com.theblack.laquinielamx.models;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * @author Victor Hugo Olvera Cruz
  */
 @Data
-@Entity(name = "stadium")
-public class Stadium {
+@Entity
+@Table(name = "stadiums")
+public class Stadium implements Serializable {
 
     //Atttributes
-
     @Id
     @Column
     private Long id;
@@ -20,10 +24,5 @@ public class Stadium {
     @Column (name = "name", nullable = false)
     private String stadiumName;
 
-    @OneToOne(mappedBy = "stadium")
-    private Team team;
-
-    @OneToOne(mappedBy = "stadium")
-    private Matches match;
 
 }
