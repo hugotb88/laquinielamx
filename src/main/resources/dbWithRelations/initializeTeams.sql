@@ -1,0 +1,32 @@
+INSERT INTO `quinielamx`.`teams`
+(
+`id`,
+`goals_against`,
+`goals_scored`,
+`matches_draw`,
+`matches_lost`,
+`matches_played`,
+`matches_won`,
+`points`,
+`team_name`,
+`stadium_id`)
+VALUES
+(1 ,0,0,0,0,0,0,0,"América",1),
+(2 ,0,0,0,0,0,0,0,"Atlas",2),
+(3 ,0,0,0,0,0,0,0,"Atlético San Luis",3),
+(4 ,0,0,0,0,0,0,0,"Cruz Azul",4),
+(5 ,0,0,0,0,0,0,0,"FC Juárez",5),
+(6 ,0,0,0,0,0,0,0,"Guadalajara",6),
+(7 ,0,0,0,0,0,0,0,"Leon",7),
+(8 ,0,0,0,0,0,0,0,"Monterrey",8),
+(9 ,0,0,0,0,0,0,0,"Morelia",9),
+(10,0,0,0,0,0,0,0,"Necaxa",10),
+(11,0,0,0,0,0,0,0,"Pachuca",11),
+(12,0,0,0,0,0,0,0,"Puebla",12),
+(13,0,0,0,0,0,0,0,"Pumas",13),
+(14,0,0,0,0,0,0,0,"Querétaro",14),
+(15,0,0,0,0,0,0,0,"Santos Laguna",15),
+(16,0,0,0,0,0,0,0,"Tijuana",16),
+(17,0,0,0,0,0,0,0,"Toluca",17),
+(18,0,0,0,0,0,0,0,"UANL",18),
+(19,0,0,0,0,0,0,0,"Veracruz",19);
