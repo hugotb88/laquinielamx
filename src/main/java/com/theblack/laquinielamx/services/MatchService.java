@@ -23,4 +23,11 @@ public class MatchService {
     public List<Match> getAllMatchesOfSeason(){
         return matchesDao.findAll();
     }
+
+    /**
+     * Get a specific match based on Id
+     * */
+    public Match getMatchById(Long idMatch) {
+        return matchesDao.getOne(idMatch);
+    }
 }

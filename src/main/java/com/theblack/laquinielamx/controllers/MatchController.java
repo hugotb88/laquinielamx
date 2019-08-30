@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -28,10 +29,13 @@ public class MatchController {
         return new ResponseEntity<List>( result, HttpStatus.OK);
     }
 
-//    @GetMapping("/matches/{idMatch}")
-//    public Match getMatch (@PathVariable Long idMatch){
-//        Match result = new Match();
-//        result = matchesDao.getOne(idMatch);
-//        return result;
-//    }
+    /**
+     * Get a specific match data based on Id
+     */
+    @GetMapping("/matches/{idMatch}")
+    public Match getMatch (@PathVariable Long idMatch){
+        Match result = new Match();
+        result = matchService.getMatchById(idMatch);
+        return result;
+    }
 }
