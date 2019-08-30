@@ -35,7 +35,8 @@ public class User {
     @Column(name = "status")
     private String status;
 
-
+    @Column(name = "active_round")
+    private Integer activeRound;
 
 }
 
