@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -36,6 +37,8 @@ public class MatchController {
     public Match getMatch (@PathVariable Long idMatch){
         Match result = new Match();
         result = matchService.getMatchById(idMatch);
+        if(result==null)
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Match not found");
         return result;
     }
 }

@@ -28,6 +28,6 @@ public class MatchService {
      * Get a specific match based on Id
      * */
     public Match getMatchById(Long idMatch) {
-        return matchesDao.getOne(idMatch);
+        return matchesDao.findById(idMatch).orElse(null);
     }
 }
